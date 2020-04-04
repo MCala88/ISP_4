@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ProcesadorTexto {
+public class ProcesadorTexto implements BasicProcText, CorreccionProcText {
 
+	List<String> texto = new ArrayList<>();
 
-	private List<String> texto = new ArrayList<>();
-	
+	@Override
 	public void nueva (String palabra) {
 		texto.add(palabra);
 	}
@@ -20,7 +20,6 @@ public class ProcesadorTexto {
 	public boolean correcto (Idioma idioma) {
 		for (String palabra: texto) {
 			if (! idioma.diccionario.contains(palabra.toLowerCase())) {
-				return false;
 			}
 		}
 		return true;
