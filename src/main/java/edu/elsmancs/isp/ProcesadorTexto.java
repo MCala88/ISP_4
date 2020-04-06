@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ProcesadorTexto implements BasicProcText, CorreccionProcText {
+public class ProcesadorTexto implements Basic, Compleja {
 
 	List<String> texto = new ArrayList<>();
 

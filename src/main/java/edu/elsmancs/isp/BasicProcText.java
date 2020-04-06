@@ -4,12 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public interface BasicProcText {
+public class BasicProcText implements Basic {
 
-    public void nueva (String palabra);
+    List<String> texto = new ArrayList<String>();
+	
+	@Override
+	public void nueva (String palabra) {
+		texto.add(palabra);
+	}
 
-    public String texto();
-
+	@Override
+	public String texto () {
+		return texto.stream().collect(Collectors.joining(" "));
+    }
+    
 }
-
-
